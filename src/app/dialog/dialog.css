@@ -1,0 +1,70 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.dialog {
+  background: white;
+  padding: 22px 30px;
+  border-radius: var(--radius);
+  min-width: 260px;
+  text-align: center;
+  font-family: var(--font-main);
+}
+
+.dialog p {
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+
+.dialog button {
+  padding: 8px 22px;
+  border: none;
+  border-radius: 6px;
+  background-color: var(--primary-color);
+  color: #ffffff;
+  font-weight: 600;
+  cursor: pointer;
+
+  transition:
+    background-color 0.25s ease,
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.dialog button:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 5px 12px rgba(31, 79, 120, 0.35);
+}
+
+.dialog button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(31, 79, 120, 0.25);
+}
+
+.dialog button:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(31, 79, 120, 0.35);
+}
+
+@keyframes dialogFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.dialog {
+  animation: dialogFadeIn 0.2s ease-out;
+}

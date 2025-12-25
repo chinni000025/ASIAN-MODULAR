@@ -1,1 +1,102 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --primary-color: #1f4f78;
+  --primary-dark: #173c5c;
+  --secondary-color: #2f2f2f;
+  --bg-light: #f4f6f8;
+  --border-color: #333;
+  --card-bg: #ffffff;
+  --radius: 8px;
+  --font-main: 'Segoe UI', Roboto, Arial, sans-serif;
+}
+
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-main);
+  background-color: var(--bg-light);
+  color: var(--secondary-color);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+h1,
+h2,
+h3 {
+  color: var(--primary-color);
+  margin: 0;
+  font-weight: 600;
+}
+
+button {
+  background-color: var(--primary-color);
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-family: var(--font-main);
+  cursor: pointer;
+
+  transition:
+    background-color 0.25s ease,
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+button:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px rgba(31, 79, 120, 0.35);
+}
+
+button:active {
+  transform: translateY(0);
+  box-shadow: 0 3px 8px rgba(31, 79, 120, 0.25);
+}
+
+button:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(31, 79, 120, 0.35);
+}
+
+input[type="text"],
+input[type="file"] {
+  font-family: var(--font-main);
+  font-size: 14px;
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 2px rgba(31, 79, 120, 0.2);
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+@media print {
+  body {
+    background: #ffffff;
+    color: #000000;
+  }
+
+  h1,
+  h2,
+  h3 {
+    color: #000000;
+  }
+}

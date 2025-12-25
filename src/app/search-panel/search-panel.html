@@ -1,0 +1,21 @@
+<div class="search-panel">
+  <img src="../../../src/" alt="Asian Modulars" class="company-logo" />
+
+
+  <label class="file-upload">
+    <input type="file" accept=".csv" (change)="onCsvUpload($event)" />
+    <span>Select CSV File</span>
+    <div class="file-name" *ngIf="selectedFileName">
+      {{ selectedFileName }}
+    </div>
+  </label>
+
+
+
+  <button (click)="onAction()">
+    Go
+  </button>
+</div>
+
+<app-dialog *ngIf="showDialog" message="No Sheet Found!" [onClose]="closeDialog.bind(this)">
+</app-dialog>

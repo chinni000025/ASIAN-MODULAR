@@ -1,0 +1,22 @@
+<div class="sheet">
+
+  <div class="title">
+    <div class="company-name">ASIAN MODULAR INDUSTRIES</div>
+  </div>
+  <div class="file-name">Selected Sheet {{ sheetName() }}</div>
+  <div class="header">
+    <div class="sno-col">S.NO</div>
+    <div class="desc-col">DESCRIPTION</div>
+  </div>
+
+  <div class="row" *ngFor="let item of previewRows; let i = index">
+    <input type="text" class="sno-input" [(ngModel)]="item.sno" placeholder="Enter Part #"
+      (keydown.enter)="onEnterPartNumber(item, i)" #snoInput />
+    <div class="desc">
+      {{ item.description }}
+    </div>
+  </div>
+
+</div>
+<app-dialog *ngIf="showDialog" [message]="dialogMessage" [onClose]="closeDialog.bind(this)">
+</app-dialog>

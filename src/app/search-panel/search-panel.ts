@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CsvService } from '../services/csv.service';
 import { DataStoreService } from '../services/data-store.service';
-import { PrintCommandService } from '../services/print-command.service';
 import { Dialog } from '../dialog/dialog';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
@@ -22,7 +21,6 @@ export class SearchPanelComponent {
   constructor(
     private csv: CsvService,
     private store: DataStoreService,
-    private printCmd: PrintCommandService,
     private router: Router
   ) { }
 
@@ -41,6 +39,7 @@ export class SearchPanelComponent {
   }
 
   onAction() {
+    this.router.navigate(['/setup']);
     if (!this.selectedFileName) {
       this.showDialog = true;
       return;

@@ -1,0 +1,36 @@
+<div class="db-config-panel">
+
+  <img src="assets/Asian-Modular.png" alt="Asian Modulars" class="company-logo" />
+
+  <h2 class="title">Database Configuration</h2>
+
+  <div class="form-group">
+    <label>SQL Server Name</label>
+    <input type="text" [(ngModel)]="dbConfig.serverName" placeholder="Asian Modular Server Name" />
+  </div>
+
+  <div class="form-group">
+    <label>Port</label>
+    <input placeholder="Post Number" type="number" [readOnly]="true" [ngModel]="dbConfig.port" />
+  </div>
+
+  <div class="form-group">
+    <label>Database Name</label>
+    <input type="text" [(ngModel)]="dbConfig.databaseName" placeholder="Database name" />
+  </div>
+
+  <div class="form-group">
+    <label>Username</label>
+    <input type="text" [(ngModel)]="dbConfig.username" placeholder="SQL username" />
+  </div>
+
+  <div class="form-group">
+    <label>Password</label>
+    <input type="password" [(ngModel)]="dbConfig.password" placeholder="Password" />
+  </div>
+
+  <button (click)="submit()">
+    Save Configuration
+  </button>
+
+</div>

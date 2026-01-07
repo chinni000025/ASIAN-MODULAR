@@ -48,24 +48,24 @@ export class PreviewPanelComponent implements OnInit {
     if (!part) return;
 
     if (this.previewRows.length > 10) {
-      this.openDialog('Maximum 10 part numbers allowed');
+      this.openDialog('Maximum 10 part numbers allowed!');
       return;
     }
 
     if (this.previewRows.some(r => r.partNumber === part)) {
-      this.openDialog('This part number is already added');
+      this.openDialog('This part number is already added!');
       return;
     }
 
     const data = this.store.csvData();
     if (!data || data.length === 0) {
-      this.openDialog('CSV data not loaded');
+      this.openDialog('CSV data not loaded!');
       return;
     }
 
     const partKey = this.getPartNumberKey(data[0]);
     if (!partKey) {
-      this.openDialog('Part number column not found in CSV');
+      this.openDialog('Part number column not found in CSV!');
       return;
     }
 
@@ -74,7 +74,7 @@ export class PreviewPanelComponent implements OnInit {
     );
 
     if (!csvRow) {
-      this.openDialog('Invalid part number');
+      this.openDialog('Invalid part number!');
       return;
     }
 

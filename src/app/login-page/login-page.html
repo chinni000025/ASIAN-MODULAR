@@ -1,0 +1,29 @@
+<div class="auth-panel">
+
+    <img src="assets/Asian-Modular.png" class="company-logo" />
+
+    <h2 class="title">User Login</h2>
+
+    <div class="form-group">
+        <label>Username</label>
+        <input type="text" [(ngModel)]="loginData.userName" />
+    </div>
+
+    <div class="form-group">
+        <label>Password</label>
+        <div class="password-wrapper">
+            <input [type]="showPassword ? 'text' : 'password'" [(ngModel)]="loginData.password" />
+            <span class="eye" (click)="togglePassword()">
+                {{ showPassword ? '🙈' : '👁' }}
+            </span>
+        </div>
+    </div>
+
+    <button (click)="login()">Login</button>
+
+    <div class="links">
+        <span (click)="forgetPassword()">Forgot Password?</span>
+        <span (click)="register()">Create Account</span>
+    </div>
+
+</div>

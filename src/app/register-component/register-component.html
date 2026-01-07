@@ -1,0 +1,34 @@
+<div class="auth-panel">
+    <img src="assets/Asian-Modular.png" class="company-logo" />
+    <h2 class="title">Create Account For Asian Modular</h2>
+    <div class="form-group">
+        <label>Username</label>
+        <input type="text" [(ngModel)]="registerData.userName" />
+    </div>
+    <div class='form-group'>
+        <label>Gmail</label>
+        <input type="gmail" [(ngModel)]="registerData.gmail" />
+    </div>
+    <div class="form-group">
+        <label>Password</label>
+
+        <div class="password-wrapper">
+            <input [type]="showPassword ? 'text' : 'password'" [(ngModel)]="registerData.password" />
+
+            <span class="eye" (click)="togglePassword()">
+                {{ showPassword ? '🙈' : '👁' }}
+            </span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label>Confirm Password</label>
+        <div class="password-wrapper">
+            <input type='password' [(ngModel)]="registerData.confirmPassword" />
+        </div>
+    </div>
+    <button (click)="register()">Create Account</button>
+    <div class="links">
+        <span (click)="backToLogin()">Back to Login</span>
+    </div>
+</div>
